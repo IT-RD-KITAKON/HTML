@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+/*以下はhtmlの共通部分*/
+html {
+    background-image: url(img/20210720182910.gif);
+    background-color: rgba(241, 249, 255, 0.912);
+    background-blend-mode: lighten;
+    font-family: "Noto Sans JP", sans-serif;
+    animation: body 1s ease-in;
+}
+
+body {
+    margin: 0;
+}
+
+/*ここまで*/
+header {
+    position: fixed;
+    background-color: rgba(82, 165, 249, 0.506);
+    backdrop-filter: blur(5px);
+    width: 100%;
+
+    margin-top: -20px;
+    
+    z-index: 5;
+}
+
+
+header nav ul {
+    display: flex;
+    margin-left: -1rem;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-right: 35px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+h1 {
+    background-color: rgb(203, 203, 203);
+    font-size: 1rem;
+
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+
+    padding-top: 2.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.6rem;
+    padding-right: 0.9rem;
+
+    width: fit-content;
+
+    border-radius: 1rem;
+    
+    transition: all 1.0s;
+}
+
+h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    background-color: rgba(82, 165, 249, 0.506);
+    width: fit-content;
+
+    margin-left: 2rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    border-radius: 2rem;
+    backdrop-filter: blur(3px);
+}
+
+/*以下はh3_show設定*/
+#h3_show {
+    background-color: rgba(255, 255, 255, 0.698);
+
+    border: solid;
+    border-radius: 10px;
+    border-color: rgba(82, 165, 249, 0.506);
+
+    box-shadow: 0px 0px 5px 1px gray;
+
+    margin-left: 2rem;
+    margin-right: 2rem;
+    backdrop-filter: blur(5px);
+
+}
+
+#h3_show .flexbox {
+    display: flex;
+}
+
+#h3_show img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 4rem;
+
+    margin-top: 25px;
+    margin-left: 15px;
+
+    margin-bottom: 10px;
+
+}
+
+#h3_show span {
+    color: rgb(0, 0, 0);
+    font-size: 130%;
+}
+
+#h3_show .text1 {
+    font-weight: 350;
+    margin-left: 15px;
+}
+
+/*以下はhide設定*/
+
+#h3_hide {
+    background-color: rgba(176, 220, 236, 0.673);
+
+    border-radius: 10px;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    padding-bottom: 1px;
+    backdrop-filter: blur(3px);
+}
+
+#h3_hide span {
+    font-size: 120%;
+}
+
+#h3_hide img {
+    width: 10rem;
+    margin-top: 1rem;
+    margin-left: 70px;
+
+    border-radius: 10rem;
+}
+
+#h3_hide .text1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+    font-weight: 350;
+}
+
+.picflex {
+    text-align: center;
+}
+
+.picflex img{
+    width: 80%;
+    border-radius: 20px;
+    border: solid;
+    border-color: rgb(146, 199, 219);
+    border-width: 0.5rem;
+
+    margin-bottom: 2rem;
+
+    transition: all 0.5s;
+}
+
+.picflex .first img{
+    margin-top: 5rem;
+    margin-bottom: 100px;
+    transform: rotate(-90deg);
+    width: 40rem;
+}
+
+.picflex .fifth img {
+    margin-top: 4rem;
+    transform: rotate(-90deg);
+    width: 40rem;
+}
+
+.picflex .sixth img {
+    margin-top: 50px;
+}
+
+
+
+/*以下はmedia可変のサイズ*/
+
+@media (max-width:610px) {
+    header nav ul li {
+        font-size: 70%;
+    }
+
+    h1 {
+        padding-top: 2rem;
+    }
+}
+
+@media(max-width:500px){
+    h1 {
+        padding-top: 3rem;
+    }
+}
+@media(max-width:410px){
+    h1 {
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width:419px) {
+    header nav ul{
+        display: block;
+    }
+    header nav  {
+
+        padding-bottom: 1rem;
+        padding-top: 1.1rem;
+
+        margin-top: -10rem;
+        transition: all 1s;
+
+        background-color: rgba(255, 158, 158, 0.588);
+    }
+
+    header nav:hover {
+        margin-top: 0rem;
+        margin-bottom: -1rem;
+    }
+
+    header nav ul li {
+        font-size: 100%;
+        margin-top: 0.5rem;
+        background-color: white;
+        width: 92%;
+
+        border-radius: 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        transition: all 0.5s;
+    }
+    header nav ul li a {
+        margin-left: 1rem;
+    }
+
+    header nav ul li:hover {
+        box-shadow: 0px 0px 2px 2px gray;
+    }
+
+    h1{
+        margin-top: 0rem;
+    }
+}
+
+@media(min-width:419px) {
+    #h3_hide {
+        display: none;
+    }
+}
+
+@media(max-width:419px) {
+    #h3_show {
+        display: none;
+    }
+
+    .h3_hide {
+        display: block;
+    }
+}
+
+@media(min-width:600px){
+    .picflex img{
+        width: 30rem;
+    }
+}
+
+@media(max-width:650px){
+    .picflex .first img{
+        width: 90%;
+    }
+    
+    .picflex .fifth img {
+        width: 90%;
+    }
+    
+    .picflex .sixth img {
+        margin-top: 50px;
+    }
+}
+
+
+@keyframes body {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

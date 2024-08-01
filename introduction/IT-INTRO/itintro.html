@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Kitakon" content="IT work">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="itintro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <p><a href="../allwork.html">1年生作品一覧</a></p>
+        <p><a href="../produce/producer.html">このサイトの作成者</a></p>
+        <p><a>IT研究部の紹介（いまここ）</a></p>
+    </header>
+
+
+
+    <main>
+
+        <div class="darkbtn">
+            <input type="checkbox" class="dark-mode">
+            <a>ダークモード</a>
+        </div>
+
+        <h1>
+            IT Research Department
+        </h1>
+
+        <h2>
+            <p class="main">IT研究部代表より</p>
+            <p class="text"> &emsp;こんにちは！この度は北上コンピュータ・アカデミーの学園祭にお越しいただき、ありがとうございます。
+                <br>&emsp;IT研究部では、少ない必修科目の中プログラミング・アプリケーションの研究開発を行っています。
+                当サイト「<a href="../allwork.html">1年生作品一覧</a>」より、1年生が作成したサイトが公開されておりますので是非ご覧ください!
+                <br>&emsp;また、本サイトの醍醐味である作品「<a
+                    href="../../main/index.html">北コン360度紹介</a>」では本校の施設内を360度で閲覧できるサイトもありますので、そちらもご覧ください!
+
+            </p>
+        </h2>
+
+        <h2>
+            <p class="main">当サイトのアクセシビリティについて</p>
+            <p class="text">
+                以下の入力フォームにIT研究部が作成したサイトのアクセシビリティ<span>※1</span>&emsp;調査をお願いいたします。このアンケート調査は任意です。
+            <p class="minitext">
+                ※1 : 当サイトのアクセシビリティとは、見やすさ（文字の大きやさ色）、動き、適した画像サイズなどを表しています。
+            </p>
+            </p>
+
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdIyYj0x_d7yBAx4jhB0yap9Zr2_VjDDh0Lwi3SD9eynXQL9A/viewform?embedded=true"
+                width="800" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+
+        </h2>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // チェックボックスの取得
+        const btn = document.querySelector(".dark-mode");
+
+        // チェックした時の挙動
+        btn.addEventListener("change", () => {
+            if (btn.checked == true) {
+                // ダークモード
+                document.body.classList.remove("light-theme");
+                document.body.classList.add("dark-theme");
+            } else {
+                // ライトモード
+                document.body.classList.remove("dark-theme");
+                document.body.classList.add("light-theme");
+            }
+        });
+    </script>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
