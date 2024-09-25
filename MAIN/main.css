@@ -1,0 +1,347 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("../FONTS/PRODUCTSANS/ProductSans-Medium.ttf") format("truetype");
+}
+
+/*ここから共通部分*/
+html {
+    font-family: "Product Sans", "Noto Sans JP";
+    font-weight: 400;
+    background-image: url(../INTRODUCTION/PRODUCE/img/gif/20210720182910.gif);
+    background-size: 130%;
+    background-color: rgba(230, 247, 255, 0.956);
+    background-blend-mode: lighten;
+    color: black;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+
+    background-color: rgba(104, 110, 117, 0.834);
+    backdrop-filter: blur(2px);
+
+    width: 6rem;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    text-align: center;
+
+    color: white;
+
+    transition: none;
+}
+
+header div img {
+    width: 30%;
+
+    margin-top: 3rem;
+
+    background-color: rgba(95, 95, 95, 0.86);
+    backdrop-filter: blur(2px);
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+
+    border-radius: 2rem;
+
+    transition: all 0.5s;
+}
+
+header div p {
+    margin-top: 0;
+    display: block;
+}
+
+header div img:hover {
+    background-color: rgb(151, 151, 151);
+
+}
+
+footer {
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+
+    bottom: 0;
+
+    width: 100%;
+
+    margin-top: 30px;
+    margin-left: 5.5rem;
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+    background-color: rgba(0, 0, 0, 0.542);
+
+    text-align: center;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: all 0.5s;
+
+}
+
+
+/*共通部分ここまで*/
+
+/*ここまで*/
+
+main {
+    margin-bottom: 10rem;
+}
+
+main div.Title {
+    margin-left: 5rem;
+    justify-content: center;
+    display: flex;
+}
+
+
+
+
+main p {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+}
+
+main div.Title img {
+    margin-top: 2rem;
+
+    width: 23rem;
+}
+
+main div.mainSubText {
+    display: flex;
+    justify-content: center;
+}
+
+main div.mainSubText p {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(0, 0, 0);
+
+    border: solid rgb(117, 188, 255);
+
+    border-width: 2px;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    width: fit-content;
+
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.6rem;
+
+    margin-left: 5rem;
+
+
+    border-radius: 2rem;
+    transition: all 0.5s;
+}
+
+main div.mainSubText p:hover {
+    background-color: rgb(96, 158, 239);
+    box-shadow: 0px 0px 3px 1px rgb(255, 152, 152);
+    color: white;
+}
+
+main div.main {
+    text-align: center;
+}
+
+main div.main img {
+    width: 80%;
+
+    margin-top: 1rem;
+    margin-left: 6rem;
+    margin-bottom: 5rem;
+
+    border-radius: 1.4rem;
+
+    border: solid gray;
+    border-width: 0.5rem;
+}
+
+main div.button {
+    display: flex;
+    justify-content: center;
+
+    margin-left: 6rem;
+    margin-top: -5rem;
+}
+
+main div.button div.column1,
+div.column2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+main div.button div p:hover {
+    box-shadow: 0px 0px 3px 2px rgb(255, 224, 112);
+}
+
+main div.button div a {
+    text-decoration: none;
+    color: white;
+
+}
+
+main div.button div a p {
+    background-color: gray;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.6rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+
+    border-radius: 3rem;
+    transition: all 0.5s;
+
+}
+
+main div.mainEndText {
+    margin-left: 8rem;
+    margin-right: 2.5rem;
+}
+
+
+main div.mainEndText p {
+    background-color: white;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.7rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border: solid gray;
+    border-width: 0.3rem;
+    border-radius: 1rem;
+}
+
+
+
+
+
+
+/*footer here*/
+
+/*共通部分ここから*/
+
+
+@media(min-width:900px) {
+    header {
+        width: 8.5rem;
+    }
+
+    main div.main img {
+        width: 44rem;
+    }
+
+    main div.mainEndText {
+        margin-left: 15%;
+        margin-right: 3%;
+    }
+
+    footer {
+        margin-left: 8rem;
+    }
+}
+
+@media(max-width:800px) {
+    main div.button {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+@media (max-width:655px) {
+
+    header {
+        backdrop-filter: blur(2px);
+
+        position: fixed;
+
+        top: 85%;
+
+        width: 100%;
+
+        background-color: rgba(120, 119, 119, 0.707);
+
+        text-align: center;
+
+        display: flex;
+
+        justify-content: space-around;
+
+        transition: none;
+        z-index: 1;
+    }
+
+    header div img {
+        width: 50%;
+        margin-top: 1rem;
+    }
+
+    header div p {
+        margin-left: 0.5rem;
+    }
+
+    main div.Title {
+        display: block;
+        text-align: center;
+        margin: 0;
+    }
+
+    main p {
+        margin-top: 0;
+    }
+
+    main div.mainSubText p {
+        margin-left: 0;
+    }
+
+    main div.main img {
+        margin-left: 0;
+    }
+
+    main div.button {
+        margin: 0;
+    }
+
+
+    main div.mainEndText {
+        margin: 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+
+
+    footer {
+        display: none;
+    }
+}
+
+
+@media(max-width:500px) {
+    main div.Title img {
+        width: 20rem;
+    }
+}
