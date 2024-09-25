@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("../../FONTS/PRODUCTSANS/ProductSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("../../FONTS/NOTOSANS/NotoSansJP-Medium.ttf") format("truetype");
+    src:url("../../FONTS/NOTOSANS/NotoSansJP-Light.ttf")format("truetype");
+    src: url("../../FONTS/NOTOSANS/NotoSansJP-Regular.ttf")format("truetype");
+    src: url("../../FONTS/NOTOSANS/NotoSansJP-SemiBold.ttf")format("truetype");
+}
+
+/*ここから共通部分*/
+html {
+    font-family: "Product Sans", "Noto Sans JP";
+    font-weight: 400;
+    background-image: url(../PRODUCE/img/gif/20210720182910.gif);
+    background-size: 130%;
+    background-color: rgba(230, 247, 255, 0.956);
+    background-blend-mode: lighten;
+    color: black;
+    scroll-behavior: smooth;
+
+    font-weight: 400;
+}
+
+div.button {
+    position: fixed;
+
+    margin-top: -2.5rem;
+
+    background-color: rgb(93, 179, 210);
+
+    padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    border-radius: 1rem;
+}
+
+.button label {
+    background-image: url("../../MAIN/img/svg/deployed_code_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
+    background-size: 100%;
+    padding: 0.5rem;
+}
+
+.button label input {
+    visibility: hidden;
+}
+
+header{
+    background-color: rgba(103, 184, 213, 0.669);
+    backdrop-filter: blur(3px);
+
+    position: fixed;
+
+    margin-top: 2rem;
+    margin-left: -0.5rem;
+
+    width: 100%;
+}
+
+header #menu{
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+header #menu p{
+    text-align: center;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    color: white;
+
+    font-size: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+    background-color: rgba(0, 0, 0, 0.542);
+
+    text-align: center;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: all 0.5s;
+
+}
+
+
+
+/*追加部分以下から*/
+
+main {
+    margin-bottom: 5rem;
+}
+
+main p{
+    font-weight: 600;
+}
+
+main div img:hover {
+    box-shadow: 0px 0px 3px 1px white;
+}
+
+
+main div.mainTitle {
+    margin-top: 3rem;
+    margin-left: 3%;
+
+    font-size: 2rem;
+    background-color: rgba(150, 204, 255, 0.767);
+
+    width: fit-content;
+
+    padding: 1rem;
+    padding-top: 0.7rem;
+
+    border-radius: 3rem;
+}
+
+main div.mainWork1 {
+    background-color: gray;
+
+    margin-left: 3%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork1 div.mainWork1img {
+    margin: 1rem;
+}
+
+main div.mainWork1 div.mainWork1img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork1 div.mainWork1text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+
+
+
+
+main div.mainWork2 {
+    background-color: gray;
+
+    margin-left: 3%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork2 div.mainWork2img {
+    margin: 1rem;
+}
+
+main div.mainWork2 div.mainWork2img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork2 div.mainWork2text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+
+
+/*****************/
+
+
+main div.mainWork3 {
+    background-color: gray;
+
+    margin-left: 3%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork3 div.mainWork3img {
+    margin: 1rem;
+}
+
+main div.mainWork3 div.mainWork3img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork3 div.mainWork3text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+/******************************/
+
+main div.mainWork33 {
+    background-color: gray;
+
+    margin-left: 3%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork33 div.mainWork33img {
+    margin: 1rem;
+}
+
+main div.mainWork33 div.mainWork33img video {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork33 div.mainWork33text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: 0.6rem;
+
+    padding-bottom: 1rem;
+}
+
+
+/************************************/
+
+main div.mainWork4 {
+    background-color: gray;
+
+    margin-left: 3%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork4 div.mainWork4img {
+    margin: 1rem;
+}
+
+main div.mainWork4 div.mainWork4img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork4 div.mainWork4text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+
+
+

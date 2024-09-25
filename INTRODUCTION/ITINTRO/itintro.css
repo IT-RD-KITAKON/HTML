@@ -1,0 +1,387 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "Product Sans";
+    src: url("../../FONTS/PRODUCTSANS/ProductSans-Medium.ttf") format("truetype");
+}
+
+/*ここから共通部分*/
+html {
+    font-family: "Product Sans" , "Noto Sans JP";
+    font-weight: 400;
+    background-image: url(../PRODUCE/img/gif/20210720182910.gif);
+    background-size: 130%;
+    background-color: rgba(230, 247, 255, 0.956);
+    background-blend-mode: lighten;
+    color: black;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+
+    background-color: rgba(104, 110, 117, 0.834);
+    backdrop-filter: blur(2px);
+
+    width: 6rem;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    text-align: center;
+
+    color: white;
+
+    transition: none;
+}
+
+header div img {
+    width: 30%;
+
+    margin-top: 3rem;
+
+    background-color: rgba(95, 95, 95, 0.86);
+    backdrop-filter: blur(2px);
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+
+    border-radius: 2rem;
+
+    transition: all 0.5s;
+}
+
+header div p {
+    margin-top: 0;
+    display: block;
+}
+
+header div img:hover {
+    background-color: rgb(151, 151, 151);
+
+}
+
+footer {
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+
+    bottom: 0;
+
+    width: 100%;
+
+    margin-top: 30px;
+    margin-left: 5.5rem;
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+    background-color: rgba(0, 0, 0, 0.542);
+
+    text-align: center;
+
+    color: white;
+
+    font-weight: 0;
+
+    transition: all 0.5s;
+
+}
+
+/*ここまで*/
+
+
+@media(min-width:900px) {
+    header {
+        width: 8.5rem;
+    }
+
+    footer {
+        margin-left: 8rem;
+    }
+}
+
+
+@media (max-width:655px) {
+
+    header {
+        backdrop-filter: blur(2px);
+
+        position: fixed;
+
+        top: 85%;
+
+        width: 100%;
+
+        background-color: rgba(120, 119, 119, 0.707);
+
+        text-align: center;
+
+        display: flex;
+
+        justify-content: space-around;
+
+        transition: none;
+        z-index: 1;
+    }
+
+    header div img {
+        width: 50%;
+        margin-top: 1rem;
+    }
+
+    header div p {
+        margin-left: 0.5rem;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+
+/*追加部分以下から*/
+
+main {
+    margin-bottom: 5rem;
+}
+
+main div.Title{
+    margin-top: 2rem;
+    margin-left: 15%;
+    margin-right: 5%;
+}
+
+main div.Title p{
+    font-size: 2rem;
+    color: white;
+    width: fit-content;
+    background-color: rgb(92, 139, 226);
+
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    border-radius: 2rem;
+
+    font-weight: 400;
+}
+
+main div.column1 {
+    background-color: rgba(147, 215, 255, 0.56);
+    backdrop-filter: blur(5px);
+    margin-left: 15%;
+    margin-right: 5%;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    border-radius: 1.5rem;
+}
+
+main div.column1 p.main {
+    background-color: white;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+
+    margin-top: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 700;
+}
+
+main div.column1 p.text{
+
+    text-align: left;
+    font-weight: 400;
+    font-weight: 700;
+    font-size: 150%;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 400;
+}
+
+
+
+main div.column2 {
+    background-color: rgba(147, 215, 255, 0.56);
+    backdrop-filter: blur(5px);
+    margin-left: 15%;
+    margin-right: 5%;
+    margin-top: 2rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    border-radius: 1.5rem;
+}
+
+main div.column2 p.main {
+    background-color: white;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+
+    margin-top: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 700;
+}
+
+main div.column2 p.text{
+    text-align: left;
+    font-weight: 400;
+    font-weight: 700;
+    font-size: 150%;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 500;
+}
+
+main div.column2 a{
+    text-decoration: none;
+}
+
+main div.column2 a p.profile {
+    background-color: rgb(37, 106, 209);
+    color: white;
+
+    text-align: center;
+    font-weight: 400;
+    font-weight: 700;
+    font-size: 150%;
+
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 500;
+
+    transition: all 0.5s;
+}
+
+main div.column2 a p.profile:hover {
+    box-shadow: 0px 0px 3px 1px rgb(255, 255, 255);
+}
+
+
+
+main div.column3 {
+    background-color: rgba(147, 215, 255, 0.56);
+    backdrop-filter: blur(5px);
+    margin-left: 15%;
+    margin-right: 5%;
+    margin-top: 3rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    border-radius: 1.5rem;
+}
+
+main div.column3 p.main {
+    background-color: white;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+
+    margin-top: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 700;
+}
+
+main div.column3 p.text{
+
+
+    text-align: left;
+    font-weight: 400;
+    font-weight: 700;
+    font-size: 150%;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 400;
+}
+
+main div.column3 p.text span{
+    color: red;
+    font-size: 1rem;
+}
+
+main div.column3 p.miniText{
+
+
+    text-align: left;
+    font-weight: 400;
+    font-weight: 700;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-radius: 0.5rem;
+
+    font-weight: 700;
+}
+
+main div.column3 iframe{
+    width: 97%;
+
+}
+
+@media(min-width:1200px){
+    main {
+        margin-left: 5rem;
+    }
+    main div.column1,div.column2,div.column3{
+        width: 58rem;
+    }
+}
+
+
+
+@media(max-width:655px){
+    main {
+        margin-left: -3rem;
+        margin-right: 0rem;
+        margin-bottom: 10rem;
+    }
+}

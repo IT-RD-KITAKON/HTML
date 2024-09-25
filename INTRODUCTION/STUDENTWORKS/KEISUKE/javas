@@ -1,0 +1,124 @@
+class OthelloGame {
+  constructor() {
+    this.board = Array(8).fill().map(() => Array(8).fill(0));
+    this.board[3][3] = this.board[4][4] = 1;
+    this.board[3][4] = this.board[4][3] = -1;
+    this.currentPlayer = 1;
+    this.directions = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+  }
+
+  traverseBoard(x, y, color, callback) {
+    for(let [dx, dy] of this.directions){
+      let nx = x + dx;
+      let ny = y + dy;
+      let count = 0;
+      while(nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && this.board[nx][ny] == -color){
+        nx += dx;
+        ny += dy;
+        count++;
+      }
+      if(count > 0 && nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && this.board[nx][ny] == color){
+        callback(x, y, dx, dy, count);
+      }
+    }
+  }
+
+  canPlaceStone(x, y, color) {
+    if(this.board[x][y] != 0) return false;
+    let canPlace = false;
+    this.traverseBoard(x, y, color, () => canPlace = true);
+    return canPlace;
+  }
+
+  doPlaceStone(x, y, color) {
+    this.traverseBoard(x, y, color, (x, y, dx, dy, count) => {
+      let nx = x;
+      let ny = y;
+      for(let j = 0; j <= count; j++){
+        this.board[nx][ny] = color;
+        nx += dx;
+        ny += dy;
+      }
+    });
+  }
+
+  hasLegalMove(color) {
+    return this.board.some((row,x) => row.some((cell,y) => this.canPlaceStone(x,y,color)));
+  }
+
+  calculateScore() {
+    let black = Array.prototype.concat(...this.board).filter(x => x === 1).length;
+    let white = Array.prototype.concat(...this.board).filter(x => x === -1).length;
+    return {black: black, white: white};
+  }
+
+}
+
+class OthelloGameUI {
+  constructor(game) {
+    this.game = game;
+    this.boardElement = document.getElementById('board');
+    this.playerElement = document.getElementById('player');
+
+    for(let i = 0; i < 8; i++){
+      for(let j = 0; j < 8; j++){
+        let cellElement = document.createElement('div');
+        cellElement.className = 'cell';
+        cellElement.addEventListener('click', () => {
+          if(this.game.canPlaceStone(i, j, this.game.currentPlayer)) {
+            this.game.doPlaceStone(i, j, this.game.currentPlayer);
+            this.game.currentPlayer *= -1;
+            if(!this.game.hasLegalMove(this.game.currentPlayer)) {
+              this.game.currentPlayer *= -1;
+              if(!this.game.hasLegalMove(this.game.currentPlayer)) {
+                let score = this.game.calculateScore();
+                let winner = score.black > score.white ? '黒' : '白';
+                alert('ゲーム終了\n' + '黒: ' + score.black + ', 白: ' + score.white + '\n勝者: ' + winner);
+              }
+            }
+            if(this.game.currentPlayer == -1) { // AI（白）の手番
+              if(!this.game.hasLegalMove(this.game.currentPlayer)) {
+                this.game.currentPlayer *= -1;
+              }
+              this.drawBoard();
+            } else {
+              if(!this.game.hasLegalMove(this.game.currentPlayer)) {
+                this.game.currentPlayer *= -1;
+              }
+              this.drawBoard();
+            }
+            this.drawBoard();
+          }
+        });
+        this.boardElement.appendChild(cellElement);
+      }
+    }
+
+    this.drawBoard();
+  }
+
+  drawBoard() {
+    for(let i = 0; i < 8; i++){
+      for(let j = 0; j < 8; j++){
+        let cellElement = this.boardElement.children[i * 8 + j];
+        cellElement.innerHTML = '';
+        if(this.game.board[i][j] != 0){
+          let stoneElement = document.createElement('div');
+          stoneElement.classList.add('stone');
+          if(this.game.board[i][j] == 1){
+            stoneElement.classList.add('black');
+          } else if(this.game.board[i][j] == -1){
+            stoneElement.classList.add('white');
+          }
+          cellElement.appendChild(stoneElement);
+        }
+      }
+    }
+
+    this.playerElement.textContent = '現在のプレイヤー: ' + (this.game.currentPlayer == 1 ? '黒' : '白');
+  }
+}
+
+let game = new OthelloGame();
+let ui = new OthelloGameUI(game);
+ui.drawBoard();

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#minesweeper {
+    display: grid;
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cell.revealed {
+    background-color: white;
+    cursor: default;
+}
+
+.cell.mine {
+    background-color: red;
+}
+
+.cell.flag {
+    background-color: yellow;
+}
+
+.outline{
+    margin-top: 3rem;
+    margin-bottom: -2rem;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    border: solid;
+    border-color: rgba(210, 239, 255, 0.673);
+    border-radius: 1rem;
+
+    box-shadow: 0px 0px 3px 1px gray;
+
+    background-color: rgba(210, 239, 255, 0.673);
+}

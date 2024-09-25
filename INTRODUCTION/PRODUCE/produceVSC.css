@@ -1,0 +1,778 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "Product Sans";
+    src: url("../../FONTS/PRODUCTSANS/ProductSans-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "0xPROTO REG";
+    src: url("../../FONTS/0xPROTO/0xProto-Regular.ttf") format("truetype");
+}
+
+/*ここから共通部分*/
+html {
+    font-family: "Product Sans" , "Noto Sans JP";
+    font-weight: 400;
+    background-image: url(../PRODUCE/img/gif/20210720182910.gif);
+    background-size: 130%;
+
+    background-blend-mode: overlay;
+    background-color: rgba(17, 17, 17, 0.956);
+    color: rgb(255, 255, 255);
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+
+    background-color: rgba(104, 110, 117, 0.834);
+    backdrop-filter: blur(2px);
+
+    width: 6rem;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    text-align: center;
+
+    color: white;
+
+    transition: none;
+}
+
+header div img {
+    width: 30%;
+
+    margin-top: 3rem;
+
+    background-color: rgba(95, 95, 95, 0.86);
+    backdrop-filter: blur(2px);
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+
+    border-radius: 2rem;
+
+    border: solid;
+    border-color: rgb(63, 149, 48);
+
+    transition: all 0.5s;
+}
+
+header div p {
+    margin-top: 0;
+    display: block;
+}
+
+header div img:hover {
+    box-shadow: 0px 0px 5px 5px rgb(164, 200, 255);
+}
+
+footer {
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+
+    bottom: 0;
+
+    width: 100%;
+
+    margin-top: 30px;
+    margin-left: 5.5rem;
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+    background-color: rgba(0, 0, 0, 0.542);
+
+    text-align: center;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: all 0.5s;
+
+}
+
+/*ここまで*/
+
+
+@media(min-width:900px) {
+    header {
+        width: 8.5rem;
+    }
+
+    footer {
+        margin-left: 8rem;
+    }
+}
+
+
+@media (max-width:655px) {
+
+    header {
+        backdrop-filter: blur(2px);
+
+        position: fixed;
+
+        top: 85%;
+
+        width: 100%;
+
+        background-color: rgba(120, 119, 119, 0.707);
+
+        text-align: center;
+
+        display: flex;
+
+        justify-content: space-around;
+
+        transition: none;
+        z-index: 1;
+    }
+
+    header div img {
+        width: 50%;
+        margin-top: 1rem;
+    }
+
+    header div p {
+        margin-left: 0.5rem;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*書き換え内容ここから*/
+
+main {
+    margin-bottom: 10rem;
+    font-family: "Noto Sans JP";
+}
+
+main div.VscBackGround {
+    margin-left: 15%;
+    margin-right: 3%;
+    background-color: rgb(29, 29, 29);
+
+    box-shadow: 0px 0px 3px 3px rgb(183, 255, 187);
+
+}
+
+/******************/
+main div.VscBackGround div.Tab{
+
+    display: flex;
+    background-color: rgb(42, 42, 42);
+
+    width: fit-content;
+
+    border: solid;
+
+    border-top-color: rgb(0, 119, 255);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-width: 1.5px;
+
+    font-style: italic;
+}
+
+main div.VscBackGround div.Tab img{
+    width: 1.3rem;
+    height: 1.3rem;
+
+    margin-top: 0.7rem;
+
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    border-radius: 2rem;
+}
+
+main div.VscBackGround div.Tab img:hover{
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
+
+main div.VscBackGround img{
+    width: 1.3rem;
+
+
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+main div.VscBackGround div.Tab p{
+    color: white;
+
+    margin-top: 0.6rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+main div.VscBackGround div.Tab p a{
+    text-decoration: none;
+    color: white;
+}
+
+/*********************/
+
+
+
+main div.VscBackGround div.Ribbon{
+    background-color: rgb(42, 42, 42);
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+main div.VscBackGround div.Ribbon div.icon{
+    display: flex;
+
+    margin-left: 0.3rem;
+}
+
+main div.VscBackGround div.Ribbon div.icon div.image1 img{
+    width: 1.3rem;
+}
+
+main div.VscBackGround div.Ribbon div.icon div.image1{
+    padding-bottom: 0rem;
+    padding-top: 0.2rem;
+
+    border-radius: 5px;
+}
+
+main div.VscBackGround div.Ribbon div.icon div.image1:hover{
+    background-color: rgb(62, 62, 62);
+}
+
+main div.VscBackGround div.Ribbon div.icon div.image2{
+    padding-bottom: 0rem;
+    padding-top: 0.2rem;
+
+    filter: invert(50%);
+}
+
+main div.VscBackGround div.Ribbon div.icon div.image3{
+    padding-bottom: 0rem;
+    padding-top: 0.2rem;
+
+
+    border-radius: 5px;
+}
+main div.VscBackGround div.Ribbon div.icon div.image3:hover{
+    background-color: rgb(62, 62, 62);
+}
+
+/**********************/
+
+main div.VscBackGround div.Ribbon {
+    display: flex;
+}
+
+main div.VscBackGround div.Ribbon div.search {
+    background-color: rgb(62, 62, 62);
+
+    height: fit-content;
+    width: 100%;
+
+    margin-right: 0.5rem;
+
+    border-radius: 2px;
+
+    margin-left: 0.5rem;
+}
+
+main div.VscBackGround div.Ribbon div.search p{
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+
+    color: rgb(207, 207, 207);
+
+    margin-left: 0.5rem;
+}
+
+main div.VscBackGround div.TableList {
+    display: flex;
+    background-color: rgb(44, 44, 44);
+
+    padding-bottom: 1rem;
+}
+
+/*********************/
+
+main div.VscBackGround div.TableList div.list1{
+    display: flex;
+
+    margin-top: 0rem;
+}
+
+main div.VscBackGround div.TableList div.list1 img{
+    margin-top: 0.2rem;
+}
+
+main div.VscBackGround div.TableList div.list1 p {
+    color: white;
+}
+
+/*******************/
+
+main div.VscBackGround div.TableList div.list2{
+    display: flex;
+
+    margin-top: 0rem;
+}
+
+main div.VscBackGround div.TableList div.list2 img{
+    margin-top: 0.2rem;
+}
+
+main div.VscBackGround div.TableList div.list2 p {
+    color: white;
+}
+
+/*****************/
+
+main div.VscBackGround div.TableList div.list3{
+    display: flex;
+
+    margin-top: 0rem;
+}
+
+main div.VscBackGround div.TableList div.list3 img{
+    margin-top: 0.2rem;
+}
+
+main div.VscBackGround div.TableList div.list3 p {
+    color: white;
+}
+/*****************/
+/*****************/
+/*****************/
+
+main div.VscBackGround div.TableInText {
+    margin-top: -1rem;
+    background-color: rgb(30, 30, 30);
+}
+
+/***************/
+main div.VscBackGround div.TableInText div.flex{
+    display: flex;
+
+
+}
+
+/********/
+
+main div.VscBackGround div.TableInText div.flex div.number{
+    font-family: "0xPROTO REG";
+
+    margin-right: 0.5rem;
+}
+
+main div.VscBackGround div.TableInText div.flex div.number ul{
+    background-color: rgb(0, 0, 0);
+
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+
+    height: fit-content;
+}
+
+main div.VscBackGround div.TableInText div.flex div.number ul li {
+    list-style: none;
+    color: gray;
+
+
+}
+/******/
+
+main div.VscBackGround div.TableInText div.flex div.text {
+    font-family: "0xPROTO REG";
+}
+
+main div.VscBackGround div.TableInText div.flex div.text ul{
+    padding-left: 0;
+
+    margin-left: 0.5rem;
+}
+
+main div.VscBackGround div.TableInText div.flex div.text ul li{
+    list-style: none;
+}
+
+main div.VscBackGround div.TableInText div.flex div.text ul li strong{
+    background-color: rgb(59, 64, 87);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main div.imageList{
+    margin: 1rem;
+    text-align: center;
+    margin-left: 6rem;
+}
+
+main div.imageList img.image1{
+    width: 30rem;
+    height: 17rem;
+
+    object-fit: cover;
+
+    margin: 1rem;
+
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image2{
+    width: 30rem;
+
+    margin: 1rem;
+
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image3{
+    width: 30rem;
+    height: 22.5rem;
+    object-fit: cover;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image4{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+
+main div.imageList img.image5{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image6{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image7{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image8{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image9{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image10{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+main div.imageList img.image11{
+    width: 30rem;
+
+    margin: 1rem;
+    
+    border-radius: 1rem;
+    border: solid white;
+    box-shadow: 0px 0px 3px 1px gray;
+}
+
+
+
+@media (max-width:655px){
+    main {
+        margin-left: -4rem;
+    }
+
+    main div.imageList{
+        margin-left: 5rem;
+    }
+
+    main div.imageList img.image1{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image2{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image3{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image4{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image5{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image6{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image7{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image8{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image9{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image10{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+
+    main div.imageList img.image11{
+        width: 20rem;
+        height: 17rem;
+    
+        object-fit: cover;
+    
+        margin: 1rem;
+    
+        border-radius: 1rem;
+        border: solid white;
+        box-shadow: 0px 0px 3px 1px gray;
+    }
+    
+    
+
+}
+
+@media(max-width:500px){
+    main div.VscBackGround div.TableList {
+        display: block;
+    }
+}

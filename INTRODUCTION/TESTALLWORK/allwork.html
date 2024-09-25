@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="IT Reserch room">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../../ICON/ITFES.png">
+    <link rel="stylesheet" href="./allwork.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css">
+</head>
+
+<body>
+    <div class="button">
+        <label><input type="checkbox" id="menubox"></label>
+    </div>
+
+    <header>
+        <div id="menu">
+            <p>this is menu</p>
+        </div>
+    </header>
+
+    <style>
+        #menu {
+            display: none;
+        }
+    </style>
+
+    <script>
+        document.getElementById('menubox').addEventListener('change',function(){
+            var menu = document.getElementById('menu');
+
+            if(this.checked){
+                menu.style.display='block';
+            } else {
+                menu.style.display='none';
+            }
+        })
+    </script>
+
+
+    <main>
+        <div class="mainTitle">
+            作品一覧
+        </div>
+
+
+        <div class="mainWork1">
+
+            <div class="mainWork1img">
+                <a href="../"><img src="../img/png/JINSITE.png"></a>
+            </div>
+
+            <div class="mainWork1text">
+                <p>作品①</p>
+            </div>
+        </div>
+
+        <div class="mainWork2">
+
+            <div class="mainWork2img">
+                <a href="../STUDENTWORKS/ITTWO/IT-TWO.html"><img src="../img/png/Close.png"></a>
+            </div>
+
+            <div class="mainWork2text">
+                <p>現在準備中</p>
+            </div>
+        </div>
+
+        <div class="mainWork3">
+
+            <div class="mainWork3img">
+                <a href="../STUDENTWORKS/ITGAME/ITGAME.html"><img src="../img/png/GAME.png"></a>
+            </div>
+
+            <div class="mainWork3text">
+                <p>作品③</p>
+            </div>
+        </div>
+
+        <!-------------------------------------->
+
+        <div class="mainWork33">
+
+            <div class="mainWork33img">
+                <video controls src="../ITINTRO/profile/mov/End Crystal6_long.mp4"></video>
+            </div>
+
+            <div class="mainWork33text">
+                <p>レンダリング映像作品</p>
+            </div>
+        </div>
+
+        <!---------------------------------------->
+
+
+        <div class="mainWork4">
+
+            <div class="mainWork4img">
+                <a href="../../MAIN/main.html"><img src="../img/png/syoukai.png"></a>
+            </div>
+
+            <div class="mainWork4text">
+                <p>校内紹介</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy;Kitakami Computer Academy | IT Research Department
+    </footer>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("../../FONTS/PRODUCTSANS/ProductSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("../../FONTS/NOTOSANS/NotoSansJP-Medium.ttf") format("truetype");
+    src:url("../../FONTS/NOTOSANS/NotoSansJP-Light.ttf")format("truetype");
+    src: url("../../FONTS/NOTOSANS/NotoSansJP-Regular.ttf")format("truetype");
+    src: url("../../FONTS/NOTOSANS/NotoSansJP-SemiBold.ttf")format("truetype");
+}
+
+/*ここから共通部分*/
+html {
+    font-family: "Product Sans", "Noto Sans JP";
+    font-weight: 400;
+    background-image: url(../PRODUCE/img/gif/20210720182910.gif);
+    background-size: 130%;
+    background-color: rgba(230, 247, 255, 0.956);
+    background-blend-mode: lighten;
+    color: black;
+    scroll-behavior: smooth;
+
+    font-weight: 400;
+}
+
+header {
+    position: fixed;
+
+    background-color: rgba(104, 110, 117, 0.834);
+    backdrop-filter: blur(2px);
+
+    width: 6rem;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    text-align: center;
+
+    color: white;
+
+    transition: none;
+}
+
+header div img {
+    width: 30%;
+
+    margin-top: 3rem;
+
+    background-color: rgba(95, 95, 95, 0.86);
+    backdrop-filter: blur(2px);
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+
+    border-radius: 2rem;
+
+    transition: all 0.5s;
+}
+
+header div p {
+    margin-top: 0;
+    display: block;
+}
+
+header div img:hover {
+    background-color: rgb(151, 151, 151);
+
+}
+
+footer {
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+
+    bottom: 0;
+
+    width: 100%;
+
+    margin-top: 30px;
+    margin-left: 5.5rem;
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+    background-color: rgba(0, 0, 0, 0.542);
+
+    text-align: center;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: all 0.5s;
+
+}
+
+/*ここまで*/
+
+
+@media(min-width:900px) {
+    header {
+        width: 8.5rem;
+    }
+
+    footer {
+        margin-left: 8rem;
+    }
+}
+
+
+@media (max-width:655px) {
+
+    header {
+        backdrop-filter: blur(2px);
+
+        position: fixed;
+
+        top: 85%;
+
+        width: 100%;
+
+        background-color: rgba(120, 119, 119, 0.707);
+
+        text-align: center;
+
+        display: flex;
+
+        justify-content: space-around;
+
+        transition: none;
+        z-index: 1;
+    }
+
+    header div img {
+        width: 50%;
+        margin-top: 1rem;
+    }
+
+    header div p {
+        margin-left: 0.5rem;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+
+/*追加部分以下から*/
+
+main {
+    margin-bottom: 5rem;
+}
+
+main p{
+    font-weight: 600;
+}
+
+main div img:hover {
+    box-shadow: 0px 0px 3px 1px white;
+}
+
+
+main div.mainTitle {
+    margin-left: 15%;
+    margin-top: 3rem;
+
+    font-size: 2rem;
+    background-color: rgba(150, 204, 255, 0.767);
+
+    width: fit-content;
+
+    padding: 1rem;
+    padding-top: 0.7rem;
+
+    border-radius: 3rem;
+}
+
+main div.mainWork1 {
+    background-color: gray;
+
+    margin-left: 15%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork1 div.mainWork1img {
+    margin: 1rem;
+}
+
+main div.mainWork1 div.mainWork1img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork1 div.mainWork1text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+
+
+
+
+main div.mainWork2 {
+    background-color: gray;
+
+    margin-left: 15%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork2 div.mainWork2img {
+    margin: 1rem;
+}
+
+main div.mainWork2 div.mainWork2img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork2 div.mainWork2text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+
+
+/*****************/
+
+
+main div.mainWork3 {
+    background-color: gray;
+
+    margin-left: 15%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork3 div.mainWork3img {
+    margin: 1rem;
+}
+
+main div.mainWork3 div.mainWork3img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork3 div.mainWork3text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+/******************************/
+
+main div.mainWork33 {
+    background-color: gray;
+
+    margin-left: 15%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork33 div.mainWork33img {
+    margin: 1rem;
+}
+
+main div.mainWork33 div.mainWork33img video {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork33 div.mainWork33text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: 0.6rem;
+
+    padding-bottom: 1rem;
+}
+
+
+/************************************/
+
+main div.mainWork4 {
+    background-color: gray;
+
+    margin-left: 15%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+main div.mainWork4 div.mainWork4img {
+    margin: 1rem;
+}
+
+main div.mainWork4 div.mainWork4img img {
+    width: 100%;
+
+    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    transition: all 0.5s;
+}
+
+main div.mainWork4 div.mainWork4text p {
+    color: white;
+    font-size: 2rem;
+
+    margin: 0;
+
+    margin-top: -0.7rem;
+
+    padding-bottom: 1rem;
+}
+
+
+@media(min-width:1000px) {
+    main {
+        margin-left: 13%;
+    }
+}
+
+@media (min-width:900px) {
+
+    main div.mainWork1,
+    div.mainWork2,
+    div.mainWork3,
+    div.mainWork33,
+    div.mainWork4 {
+        width: 45rem;
+    }
+}
+
+@media(max-width:655px) {
+    main {
+        margin-bottom: 10rem;
+        margin-left: -15%;
+    }
+}
+
+

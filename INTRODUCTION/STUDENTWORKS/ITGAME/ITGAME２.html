@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マインスイーパー</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            justify-content: center;
+            position: relative;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        .controls {
+            margin: 10px;
+            text-align: center;
+        }
+
+        #minesweeper {
+            display: grid;
+            gap: 2px;
+            margin-top: 10px;
+            border: 4px solid black;
+        }
+
+        .cell {
+            width: 30px;
+            height: 30px;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid black;
+            box-sizing: border-box;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cell.revealed {
+            background-color: white;
+            cursor: default;
+            border: 1px solid #ccc;
+        }
+
+        .cell.mine {
+            background-color: red;
+        }
+
+        .cell.flag {
+            background-color: yellow;
+        }
+
+        .cell[data-mine-count="1"] {
+            color: blue;
+        }
+
+        .cell[data-mine-count="2"] {
+            color: green;
+        }
+
+        .cell[data-mine-count="3"] {
+            color: red;
+        }
+
+        .cell[data-mine-count="4"] {
+            color: darkblue;
+        }
+
+        .cell[data-mine-count="5"] {
+            color: darkred;
+        }
+
+        .cell[data-mine-count="6"] {
+            color: cyan;
+        }
+
+        .cell[data-mine-count="7"] {
+            color: black;
+        }
+
+        .cell[data-mine-count="8"] {
+            color: gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .message {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .message.game-over {
+            background-color: rgba(255, 0, 0, 0.7);
+        }
+
+        .message.win {
+            background-color: rgba(0, 255, 0, 0.7);
+        }
+
+        body ul{
+            padding-bottom: 1rem;
+            background-color: rgba(151, 228, 245, 0.612);
+
+            margin-left: 1rem;
+            margin-right: 1rem;
+
+
+            border-radius: 1rem;
+
+            box-shadow: 5px 5px 0px 0px gray;
+        }
+        body {
+            margin-top: 10rem;
+            margin-bottom: 15rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>マインスイーパー</h1>
+    <div class="controls">
+        <label for="difficulty">難易度: </label>
+        <select id="difficulty">
+            <option value="easy">簡単</option>
+            <option value="medium">普通</option>
+            <option value="hard">難しい</option>
+        </select>
+        <button id="reset">ゲームリセット</button>
+    </div>
+    <div id="minesweeper"></div>
+    <div id="gameOverMessage" class="message game-over">ゲームオーバー</div>
+    <div id="winMessage" class="message win">勝ちました！</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const difficultySettings = {
+                easy: { rows: 8, cols: 8, mines: 10 },
+                medium: { rows: 16, cols: 16, mines: 40 },
+                hard: { rows: 16, cols: 30, mines: 99 }
+            };
+
+            let board = [];
+            let cellsRevealed = 0;
+            let gameOver = false;
+            const minesweeper = document.getElementById("minesweeper");
+            const gameOverMessage = document.getElementById("gameOverMessage");
+            const winMessage = document.getElementById("winMessage");
+            const difficultySelect = document.getElementById("difficulty");
+            const resetButton = document.getElementById("reset");
+
+            function initBoard(settings) {
+                minesweeper.innerHTML = '';
+                board = [];
+                cellsRevealed = 0;
+                gameOver = false;
+                gameOverMessage.style.display = 'none';
+                winMessage.style.display = 'none';
+                minesweeper.style.gridTemplateColumns = `repeat(${settings.cols}, 30px)`;
+                for (let row = 0; row < settings.rows; row++) {
+                    const rowArr = [];
+                    for (let col = 0; col < settings.cols; col++) {
+                        const cell = document.createElement("div");
+                        cell.classList.add("cell");
+                        cell.dataset.row = row;
+                        cell.dataset.col = col;
+                        cell.addEventListener("click", revealCell);
+                        cell.addEventListener("contextmenu", (e) => {
+                            e.preventDefault();
+                            flagCell(cell);
+                        });
+                        minesweeper.appendChild(cell);
+                        rowArr.push(cell);
+                    }
+                    board.push(rowArr);
+                }
+                placeMines(settings);
+            }
+
+            function placeMines(settings) {
+                let placedMines = 0;
+                while (placedMines < settings.mines) {
+                    const row = Math.floor(Math.random() * settings.rows);
+                    const col = Math.floor(Math.random() * settings.cols);
+                    const cell = board[row][col];
+                    if (!cell.dataset.mine) {
+                        cell.dataset.mine = "true";
+                        placedMines++;
+                    }
+                }
+            }
+
+            function revealCell(event) {
+                if (gameOver) return;
+                const cell = event.target;
+                if (cell.classList.contains("revealed")) return;
+                cell.classList.add("revealed");
+                cellsRevealed++;
+                if (cell.dataset.mine) {
+                    cell.classList.add("mine");
+                    showAllMines();
+                    gameOverMessage.style.display = 'block';
+                    gameOver = true;
+                } else {
+                    const mines = countAdjacentMines(cell);
+                    if (mines > 0) {
+                        cell.textContent = mines;
+                        cell.dataset.mineCount = mines;
+                    } else {
+                        revealAdjacentCells(cell);
+                    }
+                }
+                checkWin();
+            }
+
+            function showAllMines() {
+                board.forEach(row => {
+                    row.forEach(cell => {
+                        if (cell.dataset.mine) {
+                            cell.classList.add("revealed", "mine");
+                        }
+                    });
+                });
+            }
+
+            function flagCell(cell) {
+                if (gameOver || cell.classList.contains("revealed")) return;
+                cell.classList.toggle("flag");
+            }
+
+            function countAdjacentMines(cell) {
+                const row = parseInt(cell.dataset.row);
+                const col = parseInt(cell.dataset.col);
+                let mines = 0;
+                for (let r = row - 1; r <= row + 1; r++) {
+                    for (let c = col - 1; c <= col + 1; c++) {
+                        if (r >= 0 && r < board.length && c >= 0 && c < board[0].length) {
+                            if (board[r][c].dataset.mine) {
+                                mines++;
+                            }
+                        }
+                    }
+                }
+                return mines;
+            }
+
+            function revealAdjacentCells(cell) {
+                const row = parseInt(cell.dataset.row);
+                const col = parseInt(cell.dataset.col);
+                for (let r = row - 1; r <= row + 1; r++) {
+                    for (let c = col - 1; c <= col + 1; c++) {
+                        if (r >= 0 && r < board.length && c >= 0 && c < board[0].length) {
+                            const adjacentCell = board[r][c];
+                            if (!adjacentCell.classList.contains("revealed") && !adjacentCell.dataset.mine) {
+                                revealCell({ target: adjacentCell });
+                            }
+                        }
+                    }
+                }
+            }
+
+            function checkWin() {
+                const totalCells = board.length * board[0].length;
+                const nonMineCells = totalCells - difficultySettings[difficultySelect.value].mines;
+                if (cellsRevealed === nonMineCells) {
+                    winMessage.style.display = 'block';
+                    gameOver = true;
+                }
+            }
+
+            function resetGame() {
+                const difficulty = difficultySelect.value;
+                const settings = difficultySettings[difficulty];
+                initBoard(settings);
+            }
+
+            difficultySelect.addEventListener("change", resetGame);
+            resetButton.addEventListener("click", resetGame);
+
+            resetGame();
+        });
+    </script>
+
+
+
+    <ul>
+        <h2 class="inline">
+            譜面
+        </h2>
+        <li>
+            上記のマス目には地雷が隠れています。
+        </li>
+        <h2 class="inline">
+            数字
+        </h2>
+        <li>
+            空いたマスに表示される数字は、その周りの8つのマスに埋まっている地雷の数を表しています。
+        </li>
+        <h2 class="inline">
+            開く
+        </h2>
+        <li>
+            空白のマスをクリックすると、そのマスが開き、周囲の地雷の数に応じた数字が表示されます。
+        </li>
+        <h2 class="inline">
+            フラグ
+        </h2>
+        <li>
+            地雷だと疑われるマスにフラグを建てることができます。（右クリックで）
+        </li>
+        <h2 class="inline">
+            ゲームオーバー
+        </h2>
+        <li>
+            地雷を踏んでしまうとゲームオーバーになります。
+        </li>
+    </ul>
+    
+</body>
+</html>
