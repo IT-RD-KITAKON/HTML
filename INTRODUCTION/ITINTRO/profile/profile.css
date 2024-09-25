@@ -514,5 +514,6 @@ main div.column div.profile3 div.profileText p span{
 
     main div.column div.profile3 div.profileText p{
         margin-left: 0;
+        width : auto;
     }
 }
